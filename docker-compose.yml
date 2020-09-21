@@ -1,0 +1,17 @@
+version: "3"
+services:
+  knn:
+    build:
+      context: ./knn
+    networks:
+      study:
+        ipv4_address: 171.32.0.20
+    volumes:
+      - ./knn/app:/app/
+
+
+networks:
+  study:
+    ipam:
+      config:
+        - subnet: 171.32.0.0/16
